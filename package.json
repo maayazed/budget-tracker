@@ -4,9 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon server.js",
-    "start": "node server.js",
+    "start:prod": "npm run build && node server.js",
+    "start:dev": "concurrently \"npm run server\" \"cd client && npm run start\"",
+    "server": "nodemon server.js --ignore client",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install",
+    "client": "cd client && npm start",
     "lite-server": "lite-server"
   },
   "repository": {
@@ -22,8 +26,14 @@
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "if-env": "^1.0.4",
     "lite-server": "^2.6.1",
     "mongoose": "^5.13.8",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-pwa-manifest": "^4.3.0"
   }
 }
