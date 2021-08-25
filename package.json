@@ -29,10 +29,5 @@
     "lite-server": "^2.6.1",
     "mongoose": "^5.13.8",
     "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-pwa-manifest": "^4.3.0"
   }
 }
