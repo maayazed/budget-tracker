@@ -9,7 +9,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "npm run build && node server.js",
-    "start:dev": "npm run server && npm run start\"",
+    "start:dev": "npm run server && npm run start",
     "server": "nodemon server.js --ignore client",
     "build": "npm run build",
     "client": "npm start",
