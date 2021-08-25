@@ -7,11 +7,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "npm run build && node server.js",
-    "start:dev": "npm run server && npm run start",
+    "start": "if-env NODE_ENV=production && node server.js",
     "server": "nodemon server.js --ignore client",
-    "build": "npm run build",
+    "watch": "nodemon server.js",
     "client": "npm start",
     "lite-server": "lite-server"
   },
