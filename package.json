@@ -9,7 +9,6 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && node server.js",
     "server": "nodemon server.js --ignore client",
-    "watch": "nodemon server.js",
     "client": "npm start",
     "lite-server": "lite-server"
   },
