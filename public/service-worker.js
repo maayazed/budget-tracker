@@ -1,67 +1,67 @@
 const FILES_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/styles.css',
-    '/index.js',
-    '/dist/app.bundle.js',
-    'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-    'https://cdn.jsdelivr.net/npm/chart.js@2.8.0',
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/index.js',
+  '/dist/app.bundle.js',
+  '/dist/manifest.b5265321f587e7e3ef8581e0dd737a6e.json',
+  'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+  'https://cdn.jsdelivr.net/npm/chart.js@2.8.0',
 ];
 
-const PRECACHE = 'precache-v1';
-const RUNTIME = 'runtime';
+const CACHE_NAME = 'Transaction';
+const DATA_CACHE_NAME = 'TransactionDB-v01';
 
 self.addEventListener('install', function (e) {
-    e.waitUntil(
-        caches
-            .open(PRECACHE)
-            .then((cache) => cache.addAll(FILES_TO_CACHE))
-            .then(self.skipWaiting())
-    )
+  e.waitUntil(
+    caches.open(DATA_CACHE_NAME)
+      .then((cache) => cache.add(FILES_TO_CACHE))
+      .then(self.skipWaiting())
+  );
 });
 
-self.addEventListener('activate', (e) => {
-    const currentCache = [PRECACHE, RUNTIME];
-    e.waitUntil(
-        caches
-            .keys()
-            .then((cacheNames) => {
-                return cacheNames.filter((cacheName) => !currentCache.includes(cacheName));
-            })
-            .then((cacheDelete) => {
-                return Promise.all(
-                    cacheDelete.map((cacheDelete) => {
-                        return caches.delete(cacheDelete);
-                    })
-                );
-            })
-            .then(() => self.clients.claim())
-    );
-});
+self.addEventListener('activate', function (e) {
+  e.waitUntil(
+    caches.keys()
+      .then(keyList => {
+        return Promise.all(
+          keyList.map(key => {
+            if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+              return caches.delete(key);
+            }
+          })
+        );
+      })
+  );
+  self.clients.claim();
+})
 
-self.addEventListener('fetch', function (e) {
+self.addEventListener('fetch', (e) => {
+  if (e.request.url.includes('/api/')) {
     e.respondWith(
-        caches.match(e.request)
-            .then(function (res) {
-                if (res) {
-                    return res;
-                }
-                return fetch(e.request)
-                    .then(
-                        function (res) {
-                            if (!res || res.status !== 200 || res.type !== basic) {
-                                return res;
-                            }
-
-                            let resToCache = response.clone();
-
-                            caches.open(CACHE_NAME)
-                                .then(function (cache) {
-                                    cache.put(e.res, resToCache);
-                                });
-                            return res;
-                        }
-                    );
+      caches.open(DATA_CACHE_NAME)
+        .then(cache => {
+          return fetch(e.request)
+            .then(response => {
+              if (response.status === 200) {
+                cache.put(e.request.url, response.clone());
+              }
+              return response;
             })
+            .catch(err => {
+              return cache.match(e.request);
+            });
+        })
+        .catch(err => console.log(err))
     );
+    return;
+  }
+
+  e.respondWith(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.match(e.request).then(res => {
+        return res || fetch(e.request);
+      });
+    })
+  );
 });
