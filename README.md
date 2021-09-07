@@ -43,7 +43,9 @@
  
 <h2 align="center"><strong><a href='https://powerful-brushlands-35485.herokuapp.com/'>LIVE DEMO</a></strong></h2>
  
-<img src='https://user-images.githubusercontent.com/79816212/132277314-c1dc184e-9a82-46aa-843d-afa9f2b08029.png' width="50%" height="50%"/>
+<div align='center'>
+<img src='https://user-images.githubusercontent.com/79816212/132277314-c1dc184e-9a82-46aa-843d-afa9f2b08029.png' width="30%" height="30%"/>
+</div>
 
 <hr>
 
