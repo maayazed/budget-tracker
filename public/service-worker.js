@@ -1,10 +1,10 @@
 const FILES_TO_CACHE = [
   '/',
-  '/index.html',
-  '/styles.css',
-  '/db.js',
+  'index.html',
+  'styles.css',
+  'db.js',
   '/dist/app.bundle.js',
-  '/dist/manifest.b5265321f587e7e3ef8581e0dd737a6e.json',
+  '/dist/manifest.json',
   'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
   'https://cdn.jsdelivr.net/npm/chart.js@2.8.0',
 ];
@@ -14,10 +14,11 @@ const DATA_CACHE_NAME = 'TransactionDB-v01';
 
 self.addEventListener('install', function (e) {
   e.waitUntil(
-    caches.open(DATA_CACHE_NAME)
-      .then((cache) => cache.add(FILES_TO_CACHE))
-      .then(self.skipWaiting())
+    caches.open(DATA_CACHE_NAME).then(cache => {
+      return cache.addAll(FILES_TO_CACHE);
+    })
   );
+  self.skipWaiting()
 });
 
 self.addEventListener('activate', function (e) {
@@ -32,25 +33,24 @@ self.addEventListener('activate', function (e) {
           })
         );
       })
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 })
 
 self.addEventListener('fetch', (e) => {
   if (e.request.url.includes('/api/')) {
     e.respondWith(
       caches.open(DATA_CACHE_NAME)
-        .then(cache => {
-          return fetch(e.request)
-            .then(response => {
-              if (response.status === 200) {
-                cache.put(e.request.url, response.clone());
-              }
-              return response;
-            })
-            .catch(err => {
-              return cache.match(e.request);
-            });
+        .then(async cache => {
+          try {
+            const response = await fetch(e.request);
+            if (response.status === 200) {
+              cache.put(e.request.url, response.clone());
+            }
+            return response;
+          } catch (err) {
+            return await cache.match(e.request);
+          }
         })
         .catch(err => console.log(err))
     );
@@ -58,10 +58,9 @@ self.addEventListener('fetch', (e) => {
   }
 
   e.respondWith(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.match(e.request).then(res => {
-        return res || fetch(e.request);
-      });
+    caches.open(CACHE_NAME).then(async cache => {
+      const res = await cache.match(e.request);
+      return res || fetch(e.request);
     })
   );
 });

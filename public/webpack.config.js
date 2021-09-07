@@ -26,7 +26,7 @@ const config = {
     },
     plugins: [
         new WebpackPwaManifest({
-            fingerprints: true,
+            fingerprints: false,
             name: 'Budget App',
             short_name: 'Budgeting',
             description: 'An application that allows you to add and subtract expenses that is viewed on a graph.',

@@ -4,15 +4,11 @@ let transactionVer;
 const request = indexedDB.open('Transaction', transactionVer || 1);
 
 request.onupgradeneeded = function (e) {
-  const { oldVer } = e;
-  const newVer = e.newVer || db.version;
-
-  console.log(`Db update from ${oldVer} to ${newVer}`);
 
   db = e.target.result;
 
   if (db.objectStoreNames.length === 0) {
-    db.createObjectStore('transactions', { autoIncrement = true });
+    db.createObjectStore('transactions', { autoIncrement: true });
   }
 };
 
