@@ -5,7 +5,7 @@
 ### Badges: [![badge src!](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses) ![badge src!](https://img.shields.io/badge/-mongoDB-green) ![badge src!](https://img.shields.io/badge/-express-brightgreen) ![badge src!](https://img.shields.io/badge/-mongoose-red) [![badge src!](https://img.shields.io/github/issues/maayazed/workout-tracker)](https://github.com/maayazed/workout-tracker/issues/2)
 
 <div align='center'>
-<img src='https://user-images.githubusercontent.com/79816212/130377649-87ca0938-aeea-4dba-bc64-12561d8b2132.gif'/>
+<img src=''/>
 </div>
 
 <div align='center'>
@@ -26,12 +26,12 @@
 </div>
 
 <div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fitness Tracker is a web application allowing users to record, track, and view income and expensives as transactions. These transactions are viewed using module &#xf042; chart.js.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fitness Tracker is a web application allowing users to record, track, and view income/ expensives as transactions. These transactions are viewed using module 📊 chart.js. MongoDB and mongoose are utilized with express routing and Indexed Database API to make a record interface for a budget.
 </div>
 
 <br>
  
-<img src='https://user-images.githubusercontent.com/79816212/130377791-297219ce-6dfd-42cd-8e6e-b0227c7099db.png'/>
+<img src=''/>
 
 <hr>
 
@@ -41,12 +41,10 @@
 
 <div>
 <h4>Guide: </h4> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>&#128221;<strong>Homepage</strong>: The homepage will show the user their last workout logged. </p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>📶<strong>Offline</strong>: Budget Tracker will log offline transactions once reloaded online.</p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>📈<strong>Stats</strong>: The stats page will show two graphs: Workout time/ day, and pounds lifted/ day.</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>📈<strong>Application</strong>: Budget Tracker is availble for download through the browser. Locate ↗️ on the navigation bar.</p>
     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>✍<strong>Navigation</strong>: Log a cardio or resistance workout to the database from the homepage nav buttons.</p>
-
 </div>
 
 <hr>
