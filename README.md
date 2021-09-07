@@ -12,8 +12,8 @@
 <strong>Table of Contents</strong>  
 <hr>
     <p><a href='#desc'>About</a></p>
+    <p><a href='#deploy'>Deployment</a></p>
     <p><a href='#user'>User Guidelines</a></p>
-    <p><a href='#bugs'>Bugs</a></p>
     <p><a href='#license'>Licensing</a></p>
     <p><a href='#contribute'>Contributors</a></p>
     <p><a href='#contact'>Contact</a></p>
@@ -36,6 +36,17 @@
 <hr>
 
 <div align='center'>
+    <h3><a id='deploy'>Deployment</a></h3>
+</div>
+
+<div>
+<h4>Instructions: </h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View from repository via provided <a href='https://powerful-brushlands-35485.herokuapp.com/'>link</a>. App deployment brought to you by <code><strong><a href='https://www.heroku.com/free'>⚛️Heroku</a></strong></code>.
+</div>
+
+<hr>
+
+<div align='center'>
     <h3><a id='user'>User Guidelines</a></h3>
 </div>
 
@@ -43,18 +54,10 @@
 <h4>Guide: </h4> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>📶<strong>Offline</strong>: Budget Tracker will log offline transactions once reloaded online.</p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>📈<strong>Application</strong>: Budget Tracker is availble for download through the browser. Locate ↗️ on the navigation bar.</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>🧩<strong>Application</strong>: Budget Tracker is availble for download through the browser. Locate ↗️ on the navigation bar.</p>
     
 </div>
 
-<hr>
-
-<div align='center'>
-    <h3><a id='bugs'>Bugs</a></h3>
-</div>
-  
-  <p>⚠️<strong>No available working live link due to issue <a href='https://github.com/maayazed/workout-tracker/issues/2'><img src='https://img.shields.io/badge/-Deployment-yellow'/></a>.</strong></p>
-  
 <hr>
 
 <div align='center'>
@@ -62,7 +65,7 @@
 </div>
 
 <div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Server side materials <strong>ONLY</strong> found in respository provided by <strong>MIT</strong> © <strong>maayazed</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>MIT</strong> © <strong>maayazed</strong>
 
 </div>
 
