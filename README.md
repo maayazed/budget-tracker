@@ -11,7 +11,7 @@
     <img src='https://img.shields.io/github/repo-size/maayazed/budget-tracker'/>
     <img src='https://img.shields.io/github/languages/top/maayazed/budget-tracker'/>
     <img src='https://img.shields.io/github/issues/maayazed/budget-tracker'/>
-    <img src=''/>
+    <img src='https://github.com/maayazed"><img src="https://img.shields.io/github/followers/maayazed?style=social" target="_blank"'/>
 </div>
 
 <div align='center'>
