@@ -47,20 +47,20 @@ function checkDatabase() {
   };
 }
 
+function saveRecord(rec) {
+  const transaction = db.transaction(['transactions'], 'readwrite');
+
+  const store = transaction.objectStore('transactions');
+
+  store.add(rec);
+}
+
 request.onsuccess = function (e) {
   db = e.target.result;
 
   if (navigator.online) {
     checkDatabase();
   }
-};
-
-const save = (rec) => {
-  const transaction = db.transaction(['transactions'], 'readwrite');
-
-  const store = transaction.objectStore('transactions');
-
-  store.add(rec);
 };
 
 window.addEventListener('online', checkDatabase);
