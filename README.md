@@ -7,6 +7,7 @@
     <img src='https://img.shields.io/badge/-mongoDB-green'/>
     <img src='https://img.shields.io/badge/-express-brightgreen'/>
     <img src='https://img.shields.io/badge/-mongoose-red'/>
+    <img src='https://img.shields.io/badge/-indexedDB-orange'/>
     <img src='https://img.shields.io/github/issues/maayazed/workout-tracker'/>
     <img src=''/>
     <img src=''/>
