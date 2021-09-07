@@ -36,7 +36,7 @@
 </div>
 
 <div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fitness Tracker is a web application allowing users to record, track, and view income/ expensives as transactions. These transactions are viewed using module 📊 chart.js. MongoDB and mongoose are utilized with express routing and Indexed Database API to make a record interface for a budget.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fitness Tracker is a web application allowing users to record, track, and view income/ expenses as transactions. These transactions are displayed with library 📊 chart.js. MongoDB and mongoose are utilized with express routing and Indexed Database API to make a recording interface for a budget.
 </div>
 
 <br>
@@ -68,7 +68,7 @@
 <h4>Guide: </h4> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>📶<strong>Offline</strong>: Budget Tracker will log offline transactions once reloaded online.</p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>🧩<strong>Application</strong>: Budget Tracker is availble for download through the browser. Locate ↗️ on the navigation bar.</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>🧩<strong>Application</strong>: Budget Tracker is available for download through the browser. Locate ↗️ on the navigation bar.</p>
     
 </div>
 
